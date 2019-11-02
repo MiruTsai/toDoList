@@ -1,0 +1,75 @@
+------------webpack quick start-----------
+
+安裝nodejs 跟webpack
+
+安裝webpack可參照官網步驟
+npm webpack --save-dev (在開發環境中依賴webpack的意思)
+
+專案底下通常會建兩個子資料夾
+src  >>>放專案原始碼
+dist >>>經過webpack包裝後的檔案
+
+"scripts":{
+    "test":"error"
+   >>新增 "build":"webpack"
+}
+可以在scripts 裡自訂程式碼，方便command時使用
+npm run build
+
+**
+建立webpack.config.js 
+可到官網擷取default程式碼
+(在載入babel時會用到)
+
+webpack模組系統(?)
+
+
+******webpack devserver
+自動測試工具
+
+------------------react quick start ---------------
+
+npm install react react-dom --save   (一次安裝兩個套件react react-dom)
+
+
+***
+let element=<h3>Hello</h3>   // JSX  需要引入Babel去轉譯
+
+npm install @babel/preset-env @babel/preset-react --save-dev
+
+----------ESLint -------------
+
+強迫coding style
+
+
+-------redux ----------
+第一步 設定一個儲存庫
+<script>
+let reducer = function (state, action){
+    console.log("Action",action);
+    if(!state){
+        return{};
+    }
+    if(action.type==="Add Item"){
+        return{text:action.text}
+    }
+}
+let handler = function(){
+    console.log("state",store.getState())'
+}
+let store = Redux.createStore(函式reducer);
+store.subscribe(handler); 只要函式一有更新就會立刻改變狀態
+store.dispatch({
+    type:"Add Item",
+    text:"Finish Project"
+})
+store.dispatch({
+    type:"Add Item",
+    text:"Hello World"
+})
+</script>
+
+**唯一規矩 物件裡要附加一個type
+
+
+****redux  v.s.  context
